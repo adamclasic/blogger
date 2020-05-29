@@ -1,3 +1,3 @@
 class ArticlesController < ApplicationController
-    @articles = Articles.all
+    @articles = Article.all
 end
