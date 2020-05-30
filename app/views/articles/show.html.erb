@@ -4,3 +4,5 @@
 <p><%= @article.body %></p>
 
 <%= link_to "<< Back to Articles List", articles_path %>
+<h3>Comments</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
