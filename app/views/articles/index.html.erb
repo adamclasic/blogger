@@ -1,0 +1,12 @@
+<h1>All Articles</h1>
+
+<ul id="articles">
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article_path(article), class: 'article_title', id: "article_#{article.id}" %>
+      <%= link_to "delete", article_path(article.id), method: :delete, confirm: "Really delete the article?" %>
+      <%= link_to "edit", edit_article_path(article.id) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'Create a new article', new_article_path, class: 'new_article' %>
