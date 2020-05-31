@@ -7,7 +7,7 @@
 </p>
     <%= link_to "delete", article_path(@article), method: :delete, confirm: "Really delete the article?" %>
     <%= link_to "edit", edit_article_path(@article) %>
-    <p><%= image_tag @article.image.url %></p>
+    <p><%= image_tag @article.image.url(:medium) %></p>
 
 <p><%= @article.body %></p>
 <%= render partial: 'comments/form' %>
