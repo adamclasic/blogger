@@ -20,12 +20,12 @@ class AuthorsController < ApplicationController
   # GET /authors/1/edit
   def edit
   end
-
+  
   # POST /authors
   # POST /authors.json
   def create
     @author = Author.new(author_params)
-
+    
     respond_to do |format|
       if @author.save
         format.html { redirect_to @author, notice: 'Author was successfully created.' }
@@ -36,6 +36,7 @@ class AuthorsController < ApplicationController
       end
     end
   end
+  # before_filter :require_login, except: [:new, :create]
 
   # PATCH/PUT /authors/1
   # PATCH/PUT /authors/1.json
@@ -71,4 +72,13 @@ class AuthorsController < ApplicationController
     def author_params
       params.require(:author).permit(:username, :email, :password, :password_confirmation)
     end
+
+  end
+  # before_filter :zero_authors_or_authenticated, only: [:new, :create]
+  def zero_authors_or_authenticated
+    unless Author.count == 0 || current_user
+    redirect_to root_path
+    return false
+  end
+
 end
