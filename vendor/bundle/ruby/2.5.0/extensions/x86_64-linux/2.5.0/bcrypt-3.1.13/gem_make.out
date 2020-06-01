@@ -1,0 +1,19 @@
+current directory: /home/adam/Documents/micro/blogger/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
+/home/adam/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20200601-21782-19ytbuo.rb extconf.rb
+creating Makefile
+
+current directory: /home/adam/Documents/micro/blogger/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/adam/Documents/micro/blogger/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+gcc  -D__SKIP_GNU -I/home/adam/.rbenv/versions/2.5.1/include     -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/adam/Documents/micro/blogger/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20200601-21782-1xigv13
